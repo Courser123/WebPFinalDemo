@@ -28,6 +28,7 @@
 		1393A54C1F4AD90000CB6939 /* UGCExifInfoProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1393A5471F4AD90000CB6939 /* UGCExifInfoProperties.m */; };
 		1393A54D1F4AD90000CB6939 /* UGCExifItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1393A5491F4AD90000CB6939 /* UGCExifItemModel.m */; };
 		1393A54F1F4ADBB800CB6939 /* update_guide_pic_1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1393A54E1F4ADBB800CB6939 /* update_guide_pic_1.gif */; };
+		1393A5511F4BD0F700CB6939 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1393A5501F4BD0F700CB6939 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +41,6 @@
 		1335C7201F46B508001F11F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1335C7221F46B508001F11F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1335C7251F46B508001F11F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		1335C7271F46B508001F11F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1335C72D1F46B539001F11F4 /* UGCImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UGCImage.h; sourceTree = "<group>"; };
 		1335C72E1F46B539001F11F4 /* UGCImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UGCImage.m; sourceTree = "<group>"; };
 		1335C7301F46B658001F11F4 /* UGCImageCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UGCImageCoder.h; sourceTree = "<group>"; };
@@ -71,6 +71,7 @@
 		1393A5481F4AD90000CB6939 /* UGCExifItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UGCExifItemModel.h; sourceTree = "<group>"; };
 		1393A5491F4AD90000CB6939 /* UGCExifItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UGCExifItemModel.m; sourceTree = "<group>"; };
 		1393A54E1F4ADBB800CB6939 /* update_guide_pic_1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = update_guide_pic_1.gif; sourceTree = "<group>"; };
+		1393A5501F4BD0F700CB6939 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +127,7 @@
 				1335C71F1F46B508001F11F4 /* Main.storyboard */,
 				1335C7221F46B508001F11F4 /* Assets.xcassets */,
 				1335C7241F46B508001F11F4 /* LaunchScreen.storyboard */,
-				1335C7271F46B508001F11F4 /* Info.plist */,
+				1393A5501F4BD0F700CB6939 /* Info.plist */,
 				1335C7161F46B508001F11F4 /* Supporting Files */,
 			);
 			path = FinalWebP;
@@ -270,6 +271,7 @@
 				1393A5361F4AB6BF00CB6939 /* dancing_banana2.webp in Resources */,
 				1335C7211F46B508001F11F4 /* Main.storyboard in Resources */,
 				1393A53C1F4AC93A00CB6939 /* WechatIMG20.jpeg in Resources */,
+				1393A5511F4BD0F700CB6939 /* Info.plist in Resources */,
 				1393A53E1F4ACA4700CB6939 /* WechatIMG20.webp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
