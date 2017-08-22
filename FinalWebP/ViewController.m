@@ -13,6 +13,7 @@
 #import "UGCExifInfoHelper.h"
 #import "UGCExifItemModel.h"
 #import "NSData+ImageContentType.h"
+#import "CRExif.h"
 
 @interface ViewController ()
 
@@ -33,12 +34,8 @@
     NSData *data = [NSData dataWithContentsOfFile:path];
     [self.imageView setImageWithData:data];
     
-    UGCExifInfoHelper *helper = [[UGCExifInfoHelper alloc] init];
-    NSDictionary *dict = [helper exifInfoWithWebpData:data];
-    NSLog(@"%@",dict);
+    [CRExif exifInfoWithWebPData:data];
     
-//    [NSData sd_imageFormatForImageData:data];
-
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

@@ -31,6 +31,7 @@
 		1393A5511F4BD0F700CB6939 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1393A5501F4BD0F700CB6939 /* Info.plist */; };
 		1393A5551F4C014500CB6939 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 1393A5541F4C014500CB6939 /* NSData+ImageContentType.m */; };
 		1393A5571F4C0D1800CB6939 /* webp_test.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1393A5561F4C0D1800CB6939 /* webp_test.webp */; };
+		1393A55D1F4C2ABE00CB6939 /* CRExif.m in Sources */ = {isa = PBXBuildFile; fileRef = 1393A55C1F4C2ABE00CB6939 /* CRExif.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,8 @@
 		1393A5531F4C014500CB6939 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
 		1393A5541F4C014500CB6939 /* NSData+ImageContentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+ImageContentType.m"; sourceTree = "<group>"; };
 		1393A5561F4C0D1800CB6939 /* webp_test.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = webp_test.webp; sourceTree = "<group>"; };
+		1393A55B1F4C2ABE00CB6939 /* CRExif.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRExif.h; sourceTree = "<group>"; };
+		1393A55C1F4C2ABE00CB6939 /* CRExif.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRExif.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +114,7 @@
 		1335C7151F46B508001F11F4 /* FinalWebP */ = {
 			isa = PBXGroup;
 			children = (
+				1393A55A1F4C2A9500CB6939 /* CRExif */,
 				1393A5521F4C012200CB6939 /* Category */,
 				1393A5411F4AD8E500CB6939 /* Exif */,
 				1393A5371F4AC86D00CB6939 /* FCFileManager */,
@@ -220,6 +224,15 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		1393A55A1F4C2A9500CB6939 /* CRExif */ = {
+			isa = PBXGroup;
+			children = (
+				1393A55B1F4C2ABE00CB6939 /* CRExif.h */,
+				1393A55C1F4C2ABE00CB6939 /* CRExif.m */,
+			);
+			path = CRExif;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -300,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1393A55D1F4C2ABE00CB6939 /* CRExif.m in Sources */,
 				1393A54C1F4AD90000CB6939 /* UGCExifInfoProperties.m in Sources */,
 				1335C71E1F46B508001F11F4 /* ViewController.m in Sources */,
 				1393A54D1F4AD90000CB6939 /* UGCExifItemModel.m in Sources */,
