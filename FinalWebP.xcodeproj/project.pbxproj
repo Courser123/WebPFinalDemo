@@ -29,6 +29,8 @@
 		1393A54D1F4AD90000CB6939 /* UGCExifItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1393A5491F4AD90000CB6939 /* UGCExifItemModel.m */; };
 		1393A54F1F4ADBB800CB6939 /* update_guide_pic_1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1393A54E1F4ADBB800CB6939 /* update_guide_pic_1.gif */; };
 		1393A5511F4BD0F700CB6939 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1393A5501F4BD0F700CB6939 /* Info.plist */; };
+		1393A5551F4C014500CB6939 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 1393A5541F4C014500CB6939 /* NSData+ImageContentType.m */; };
+		1393A5571F4C0D1800CB6939 /* webp_test.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1393A5561F4C0D1800CB6939 /* webp_test.webp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,9 @@
 		1393A5491F4AD90000CB6939 /* UGCExifItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UGCExifItemModel.m; sourceTree = "<group>"; };
 		1393A54E1F4ADBB800CB6939 /* update_guide_pic_1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = update_guide_pic_1.gif; sourceTree = "<group>"; };
 		1393A5501F4BD0F700CB6939 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1393A5531F4C014500CB6939 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
+		1393A5541F4C014500CB6939 /* NSData+ImageContentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+ImageContentType.m"; sourceTree = "<group>"; };
+		1393A5561F4C0D1800CB6939 /* webp_test.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = webp_test.webp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +111,8 @@
 		1335C7151F46B508001F11F4 /* FinalWebP */ = {
 			isa = PBXGroup;
 			children = (
+				1393A5521F4C012200CB6939 /* Category */,
+				1393A5411F4AD8E500CB6939 /* Exif */,
 				1393A5371F4AC86D00CB6939 /* FCFileManager */,
 				1335C7481F46EF9D001F11F4 /* libwebp */,
 				1335C7191F46B508001F11F4 /* AppDelegate.h */,
@@ -118,7 +125,7 @@
 				1335C72E1F46B539001F11F4 /* UGCImage.m */,
 				1335C7301F46B658001F11F4 /* UGCImageCoder.h */,
 				1335C7311F46B658001F11F4 /* UGCImageCoder.m */,
-				1393A5411F4AD8E500CB6939 /* Exif */,
+				1393A5561F4C0D1800CB6939 /* webp_test.webp */,
 				1393A53D1F4ACA4700CB6939 /* WechatIMG20.webp */,
 				1393A53B1F4AC93A00CB6939 /* WechatIMG20.jpeg */,
 				1393A54E1F4ADBB800CB6939 /* update_guide_pic_1.gif */,
@@ -204,6 +211,15 @@
 			path = Exif;
 			sourceTree = "<group>";
 		};
+		1393A5521F4C012200CB6939 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				1393A5531F4C014500CB6939 /* NSData+ImageContentType.h */,
+				1393A5541F4C014500CB6939 /* NSData+ImageContentType.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -269,6 +285,7 @@
 				1393A54F1F4ADBB800CB6939 /* update_guide_pic_1.gif in Resources */,
 				1335C7541F46EF9D001F11F4 /* COPYING in Resources */,
 				1393A5361F4AB6BF00CB6939 /* dancing_banana2.webp in Resources */,
+				1393A5571F4C0D1800CB6939 /* webp_test.webp in Resources */,
 				1335C7211F46B508001F11F4 /* Main.storyboard in Resources */,
 				1393A53C1F4AC93A00CB6939 /* WechatIMG20.jpeg in Resources */,
 				1393A5511F4BD0F700CB6939 /* Info.plist in Resources */,
@@ -293,6 +310,7 @@
 				1393A54A1F4AD90000CB6939 /* UGCExifInfoDataProcesser.m in Sources */,
 				1335C7181F46B508001F11F4 /* main.m in Sources */,
 				1393A53A1F4AC86D00CB6939 /* FCFileManager.m in Sources */,
+				1393A5551F4C014500CB6939 /* NSData+ImageContentType.m in Sources */,
 				1335C7321F46B658001F11F4 /* UGCImageCoder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

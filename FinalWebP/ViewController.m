@@ -12,6 +12,7 @@
 #import "FCFileManager.h"
 #import "UGCExifInfoHelper.h"
 #import "UGCExifItemModel.h"
+#import "NSData+ImageContentType.h"
 
 @interface ViewController ()
 
@@ -28,7 +29,7 @@
     self.imageView = imageView;
     imageView.frame = self.view.bounds;
     [self.view addSubview:imageView];
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"pic" ofType:@"webp"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"webp_test" ofType:@"webp"];
     NSData *data = [NSData dataWithContentsOfFile:path];
     [self.imageView setImageWithData:data];
     
@@ -36,6 +37,8 @@
     NSDictionary *dict = [helper exifInfoWithWebpData:data];
     NSLog(@"%@",dict);
     
+//    [NSData sd_imageFormatForImageData:data];
+
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
