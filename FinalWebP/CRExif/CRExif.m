@@ -9,6 +9,7 @@
 #import "CRExif.h"
 #import "demux.h"
 #import "decode.h"
+#import <ImageIO/ImageIO.h>
 
 @implementation CRExif
 
@@ -28,7 +29,24 @@
 }
 
 + (NSDictionary *)handleExifData:(NSData *)data {
-    NSLog(@"%@",data);
+    Byte *byte = (Byte *)data.bytes;
+    
+    NSMutableString *hexStr = [NSMutableString string];
+    for (int i = 0 ; i < data.length ; i++) {
+        NSString *byteStr = [NSString stringWithFormat:@"%x",byte[i]];
+        if (byteStr.length == 2) {
+            [hexStr appendString:byteStr];
+        }else {
+            [hexStr appendFormat:@"0%@",byteStr];
+        }
+        
+    }
+    
+    NSRange range = [hexStr rangeOfString:@"011a"];
+    NSLog(@"%lu",(unsigned long)range.location);
+    
+    
+    
     return nil;
 }
 
