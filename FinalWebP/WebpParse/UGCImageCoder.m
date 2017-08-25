@@ -229,7 +229,7 @@ CGImageRef UGCCGImageCreateDecodedCopy(CGImageRef imageRef, BOOL decodeForDispla
     pthread_mutex_t _lock; // recursive lock
     
     BOOL _sourceTypeDetected;
-    CGImageSourceRef _source;
+//    CGImageSourceRef _source;
     WebPDemuxer *_webpSource;
 
     UIImageOrientation _orientation;
@@ -258,7 +258,7 @@ CGImageRef UGCCGImageCreateDecodedCopy(CGImageRef imageRef, BOOL decodeForDispla
 }
 
 - (void)dealloc {
-    if (_source) CFRelease(_source);
+//    if (_source) CFRelease(_source);
     if (_webpSource) WebPDemuxDelete(_webpSource);
     if (_blendCanvas) CFRelease(_blendCanvas);
     pthread_mutex_destroy(&_lock);
@@ -445,7 +445,7 @@ CGImageRef UGCCGImageCreateDecodedCopy(CGImageRef imageRef, BOOL decodeForDispla
     WebPData webPData = {0};
     webPData.bytes = _data.bytes;
     webPData.size = _data.length;
-    WebPDemuxer *demuxer = WebPDemux(&webPData);
+    WebPDemuxer *demuxer = WebPDemux(&webPData); // 解析器
     if (!demuxer) return;
     
     uint32_t webpFrameCount = WebPDemuxGetI(demuxer, WEBP_FF_FRAME_COUNT);
@@ -462,43 +462,43 @@ CGImageRef UGCCGImageCreateDecodedCopy(CGImageRef imageRef, BOOL decodeForDispla
     BOOL needBlend = NO;
     uint32_t iterIndex = 0;
     uint32_t lastBlendIndex = 0;
-    WebPIterator iter = {0};
+    WebPIterator iter = {0}; // 迭代器
     if (WebPDemuxGetFrame(demuxer, 1, &iter)) { // one-based index...
         do {
             _UGCImageDecoderFrame *frame = [_UGCImageDecoderFrame new];
             [frames addObject:frame];
             if (iter.dispose_method == WEBP_MUX_DISPOSE_BACKGROUND) {
-                frame.dispose = UGCImageDisposeBackground;
+                frame.dispose = UGCImageDisposeBackground; // 清空画布
             }
             if (iter.blend_method == WEBP_MUX_BLEND) {
-                frame.blend = UGCImageBlendOver;
+                frame.blend = UGCImageBlendOver; // 是否是合成的
             }
             
-            int canvasWidth = WebPDemuxGetI(demuxer, WEBP_FF_CANVAS_WIDTH);
-            int canvasHeight = WebPDemuxGetI(demuxer, WEBP_FF_CANVAS_HEIGHT);
+            int canvasWidth = WebPDemuxGetI(demuxer, WEBP_FF_CANVAS_WIDTH); // 画布宽度
+            int canvasHeight = WebPDemuxGetI(demuxer, WEBP_FF_CANVAS_HEIGHT); // 画布高度
             frame.index = iterIndex;
-            frame.duration = iter.duration / 1000.0;
-            frame.width = iter.width;
-            frame.height = iter.height;
-            frame.hasAlpha = iter.has_alpha;
-            frame.blend = iter.blend_method == WEBP_MUX_BLEND;
-            frame.offsetX = iter.x_offset;
-            frame.offsetY = canvasHeight - iter.y_offset - iter.height;
+            frame.duration = iter.duration / 1000.0; // 帧间隔
+            frame.width = iter.width; // 帧宽度
+            frame.height = iter.height; // 帧高度
+            frame.hasAlpha = iter.has_alpha; // 是否有alpha通道
+            frame.blend = iter.blend_method == WEBP_MUX_BLEND; // 是否混合
+            frame.offsetX = iter.x_offset; // 帧相对于画布的x偏移量
+            frame.offsetY = canvasHeight - iter.y_offset - iter.height; // 计算帧相对于画布的y偏移量
             
             [durations addObject:@(frame.duration)];
             
             BOOL sizeEqualsToCanvas = (iter.width == canvasWidth && iter.height == canvasHeight);
             BOOL offsetIsZero = (iter.x_offset == 0 && iter.y_offset == 0);
-            frame.isFullSize = (sizeEqualsToCanvas && offsetIsZero);
+            frame.isFullSize = (sizeEqualsToCanvas && offsetIsZero); // 当前帧是否跟画布大小一致
             
             if ((!frame.blend || !frame.hasAlpha) && frame.isFullSize) {
-                frame.blendFromIndex = lastBlendIndex = iterIndex;
+                frame.blendFromIndex = lastBlendIndex = iterIndex; // 关键帧
             } else {
                 if (frame.dispose && frame.isFullSize) {
-                    frame.blendFromIndex = lastBlendIndex;
-                    lastBlendIndex = iterIndex + 1;
+                    frame.blendFromIndex = lastBlendIndex; // 非关键帧
+                    lastBlendIndex = iterIndex + 1; // dispose为真,则绘制完当前帧后需要清空画布,所以lastBlendIndex要从下一帧开始(因为画布到了这一帧结束一定会清空,且这一帧大小跟画布大小一样,所以该帧之前的blendIndex已经没有意义了,所以从下一帧开始,这是优化但不是必须的)
                 } else {
-                    frame.blendFromIndex = lastBlendIndex;
+                    frame.blendFromIndex = lastBlendIndex; // 非关键帧
                 }
             }
             if (frame.index != frame.blendFromIndex) needBlend = YES;
@@ -537,39 +537,10 @@ CGImageRef UGCCGImageCreateDecodedCopy(CGImageRef imageRef, BOOL decodeForDispla
     
     if (!_finalized && index > 0) return NULL;
     if (_frames.count <= index) return NULL;
-//    _UGCImageDecoderFrame *frame = _frames[index];
-    
-    if (_source) {
-        CGImageRef imageRef = CGImageSourceCreateImageAtIndex(_source, index, (CFDictionaryRef)@{(id)kCGImageSourceShouldCache:@(YES)});
-        if (imageRef && extendToCanvas) {
-            size_t width = CGImageGetWidth(imageRef);
-            size_t height = CGImageGetHeight(imageRef);
-            if (width == _width && height == _height) {
-                CGImageRef imageRefExtended = UGCCGImageCreateDecodedCopy(imageRef, YES);
-                if (imageRefExtended) {
-                    CFRelease(imageRef);
-                    imageRef = imageRefExtended;
-                    if (decoded) *decoded = YES;
-                }
-            } else {
-                CGContextRef context = CGBitmapContextCreate(NULL, _width, _height, 8, 0, UGCCGColorSpaceGetDeviceRGB(), kCGBitmapByteOrder32Host | kCGImageAlphaPremultipliedFirst);
-                if (context) {
-                    CGContextDrawImage(context, CGRectMake(0, _height - height, width, height), imageRef);
-                    CGImageRef imageRefExtended = CGBitmapContextCreateImage(context);
-                    CFRelease(context);
-                    if (imageRefExtended) {
-                        CFRelease(imageRef);
-                        imageRef = imageRefExtended;
-                        if (decoded) *decoded = YES;
-                    }
-                }
-            }
-        }
-        return imageRef;
-    }
     
     if (_webpSource) {
         WebPIterator iter;
+        // WebPDemuxGetFrame第二个参数 +1 是因为如果这个参数为0,那么返回最后一帧,所以index从1开始而不是0
         if (!WebPDemuxGetFrame(_webpSource, (int)(index + 1), &iter)) return NULL; // demux webp frame data
         // frame numbers are one-based in webp -----------^
         
@@ -581,23 +552,24 @@ CGImageRef UGCCGImageCreateDecodedCopy(CGImageRef imageRef, BOOL decodeForDispla
         int height = extendToCanvas ? (int)_height : frameHeight;
         if (width > _width || height > _height) return NULL;
         
-        const uint8_t *payload = iter.fragment.bytes;
+        const uint8_t *payload = iter.fragment.bytes; // fragment为当前帧的data(不太确定)
         size_t payloadSize = iter.fragment.size;
         
-        WebPDecoderConfig config;
-        if (!WebPInitDecoderConfig(&config)) {
+        WebPDecoderConfig config; // 解码配置
+        if (!WebPInitDecoderConfig(&config)) { // 初始化config
             WebPDemuxReleaseIterator(&iter);
             return NULL;
         }
-        if (WebPGetFeatures(payload , payloadSize, &config.input) != VP8_STATUS_OK) {
+        if (WebPGetFeatures(payload , payloadSize, &config.input) != VP8_STATUS_OK) { // 将config.input的地址传进去取值
             WebPDemuxReleaseIterator(&iter);
             return NULL;
         }
         
-        size_t bitsPerComponent = 8;
-        size_t bitsPerPixel = 32;
-        size_t bytesPerRow = UGCImageByteAlign(bitsPerPixel / 8 * width, 32);
-        size_t length = bytesPerRow * height;
+        size_t bitsPerComponent = 8; // 内存中像素的每个组件的位数.例如，对于32位像素格式和RGB 颜色空间，应该将这个值设为8.
+        size_t bitsPerPixel = 32; // 每个像素有多少位
+        size_t bytesPerRow = UGCImageByteAlign(bitsPerPixel / 8 * width, 32); // bitmap的每一行在内存所占的比特数
+        size_t length = bytesPerRow * height; // 绘制地址的内存块的大小
+        // 指定bitmap是否包含alpha通道，像素中alpha通道的相对位置，像素组件是整形还是浮点型等信息的字符串
         CGBitmapInfo bitmapInfo = kCGBitmapByteOrder32Host | kCGImageAlphaPremultipliedFirst; //bgrA
         
         void *pixels = calloc(1, length);
@@ -660,9 +632,7 @@ CGImageRef UGCCGImageCreateDecodedCopy(CGImageRef imageRef, BOOL decodeForDispla
 }
 
 - (void)_blendImageWithFrame:(_UGCImageDecoderFrame *)frame {
-    if (frame.dispose == UGCImageDisposePrevious) {
-        // nothing
-    } else if (frame.dispose == UGCImageDisposeBackground) {
+    if (frame.dispose == UGCImageDisposeBackground) {
         CGContextClearRect(_blendCanvas, CGRectMake(frame.offsetX, frame.offsetY, frame.width, frame.height));
     } else { // no dispose
         if (frame.blend == UGCImageBlendOver) {
@@ -684,36 +654,7 @@ CGImageRef UGCCGImageCreateDecodedCopy(CGImageRef imageRef, BOOL decodeForDispla
 
 - (CGImageRef)_newBlendedImageWithFrame:(_UGCImageDecoderFrame *)frame CF_RETURNS_RETAINED{
     CGImageRef imageRef = NULL;
-    if (frame.dispose == UGCImageDisposePrevious) {
-        if (frame.blend == UGCImageBlendOver) {
-            CGImageRef previousImage = CGBitmapContextCreateImage(_blendCanvas);
-            CGImageRef unblendImage = [self _newUnblendedImageAtIndex:frame.index extendToCanvas:NO decoded:NULL];
-            if (unblendImage) {
-                CGContextDrawImage(_blendCanvas, CGRectMake(frame.offsetX, frame.offsetY, frame.width, frame.height), unblendImage);
-                CFRelease(unblendImage);
-            }
-            imageRef = CGBitmapContextCreateImage(_blendCanvas);
-            CGContextClearRect(_blendCanvas, CGRectMake(0, 0, _width, _height));
-            if (previousImage) {
-                CGContextDrawImage(_blendCanvas, CGRectMake(0, 0, _width, _height), previousImage);
-                CFRelease(previousImage);
-            }
-        } else {
-            CGImageRef previousImage = CGBitmapContextCreateImage(_blendCanvas);
-            CGImageRef unblendImage = [self _newUnblendedImageAtIndex:frame.index extendToCanvas:NO decoded:NULL];
-            if (unblendImage) {
-                CGContextClearRect(_blendCanvas, CGRectMake(frame.offsetX, frame.offsetY, frame.width, frame.height));
-                CGContextDrawImage(_blendCanvas, CGRectMake(frame.offsetX, frame.offsetY, frame.width, frame.height), unblendImage);
-                CFRelease(unblendImage);
-            }
-            imageRef = CGBitmapContextCreateImage(_blendCanvas);
-            CGContextClearRect(_blendCanvas, CGRectMake(0, 0, _width, _height));
-            if (previousImage) {
-                CGContextDrawImage(_blendCanvas, CGRectMake(0, 0, _width, _height), previousImage);
-                CFRelease(previousImage);
-            }
-        }
-    } else if (frame.dispose == UGCImageDisposeBackground) {
+    if (frame.dispose == UGCImageDisposeBackground) {
         if (frame.blend == UGCImageBlendOver) {
             CGImageRef unblendImage = [self _newUnblendedImageAtIndex:frame.index extendToCanvas:NO decoded:NULL];
             if (unblendImage) {
