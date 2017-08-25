@@ -7,7 +7,6 @@
 //
 
 #import "CRImageView.h"
-#import "UGCImage.h"
 #import "UGCImageCoder.h"
 
 @interface CRImageView ()
@@ -24,7 +23,6 @@
 @end
 
 @implementation CRImageView
-
 
 - (instancetype)init {
     if (self = [super init]) {
@@ -165,7 +163,6 @@
     weakProxy.target = targetObject;
     return weakProxy;
 }
-
 
 #pragma mark Forwarding Messages
 

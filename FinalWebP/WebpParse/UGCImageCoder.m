@@ -15,7 +15,6 @@
 #import <pthread.h>
 #import <objc/runtime.h>
 #import <AssetsLibrary/AssetsLibrary.h>
-#import "UGCImage.h"
 #import <Accelerate/Accelerate.h>
 
 #define UGC_FOUR_CC(c1,c2,c3,c4) ((uint32_t)(((c4) << 24) | ((c3) << 16) | ((c2) << 8) | (c1)))
@@ -353,6 +352,9 @@ CGImageRef UGCCGImageCreateDecodedCopy(CGImageRef imageRef, BOOL decodeForDispla
         if (!image) return nil;
         image.isDecodedForDisplay = decoded;
         frame.image = image;
+        if (index == 0) {
+            self.bufferFrame = frame;
+        }
         return frame;
     }
     
