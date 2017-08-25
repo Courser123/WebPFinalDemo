@@ -1,5 +1,5 @@
 //
-//  CRImageView.h
+//  UGCImageView.h
 //  TestWebP
 //
 //  Created by Courser on 15/08/2017.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface CRImageView : UIImageView
+@interface UGCImageView : UIImageView
 
 @property (nonatomic,assign) BOOL isPlaying;
 

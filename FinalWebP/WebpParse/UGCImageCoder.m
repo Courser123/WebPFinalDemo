@@ -258,7 +258,6 @@ CGImageRef UGCCGImageCreateDecodedCopy(CGImageRef imageRef, BOOL decodeForDispla
 }
 
 - (void)dealloc {
-    
     if (_source) CFRelease(_source);
     if (_webpSource) WebPDemuxDelete(_webpSource);
     if (_blendCanvas) CFRelease(_blendCanvas);

@@ -8,14 +8,14 @@
 
 #import "ViewController.h"
 #import "UGCImageCoder.h"
-#import "CRImageView.h"
+#import "UGCImageView.h"
 #import "FCFileManager.h"
 #import "NSData+ImageContentType.h"
 #import "CRExifParse.h"
 
 @interface ViewController ()
 
-@property (nonatomic,weak) CRImageView *imageView;
+@property (nonatomic,weak) UGCImageView *imageView;
 
 @end
 
@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    CRImageView *imageView = [[CRImageView alloc] init];
+    UGCImageView *imageView = [[UGCImageView alloc] init];
     self.imageView = imageView;
     imageView.frame = self.view.bounds;
     [self.view addSubview:imageView];

@@ -28,7 +28,7 @@
 		1393A5601F4D268200CB6939 /* CRExifModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1393A55F1F4D268200CB6939 /* CRExifModel.m */; };
 		1393A5631F4D4FDD00CB6939 /* CRExifDict.m in Sources */ = {isa = PBXBuildFile; fileRef = 1393A5621F4D4FDD00CB6939 /* CRExifDict.m */; };
 		1393A56C1F4FCB1A00CB6939 /* IMG_1600.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1393A56B1F4FCB1A00CB6939 /* IMG_1600.webp */; };
-		1393A5741F4FCD8800CB6939 /* CRImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1393A56F1F4FCD8800CB6939 /* CRImageView.m */; };
+		1393A5741F4FCD8800CB6939 /* UGCImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1393A56F1F4FCD8800CB6939 /* UGCImageView.m */; };
 		1393A5761F4FCD8800CB6939 /* UGCImageCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1393A5731F4FCD8800CB6939 /* UGCImageCoder.m */; };
 		1393A5781F4FCF5A00CB6939 /* NOEXIFIMG_1600.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1393A5771F4FCF5A00CB6939 /* NOEXIFIMG_1600.webp */; };
 /* End PBXBuildFile section */
@@ -71,8 +71,8 @@
 		1393A5621F4D4FDD00CB6939 /* CRExifDict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRExifDict.m; sourceTree = "<group>"; };
 		1393A5641F4D508D00CB6939 /* CRTag.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRTag.h; sourceTree = "<group>"; };
 		1393A56B1F4FCB1A00CB6939 /* IMG_1600.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = IMG_1600.webp; sourceTree = "<group>"; };
-		1393A56E1F4FCD8800CB6939 /* CRImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRImageView.h; sourceTree = "<group>"; };
-		1393A56F1F4FCD8800CB6939 /* CRImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRImageView.m; sourceTree = "<group>"; };
+		1393A56E1F4FCD8800CB6939 /* UGCImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UGCImageView.h; sourceTree = "<group>"; };
+		1393A56F1F4FCD8800CB6939 /* UGCImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UGCImageView.m; sourceTree = "<group>"; };
 		1393A5721F4FCD8800CB6939 /* UGCImageCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UGCImageCoder.h; sourceTree = "<group>"; };
 		1393A5731F4FCD8800CB6939 /* UGCImageCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UGCImageCoder.m; sourceTree = "<group>"; };
 		1393A5771F4FCF5A00CB6939 /* NOEXIFIMG_1600.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = NOEXIFIMG_1600.webp; sourceTree = "<group>"; };
@@ -218,8 +218,8 @@
 		1393A56D1F4FCD1B00CB6939 /* WebpParse */ = {
 			isa = PBXGroup;
 			children = (
-				1393A56E1F4FCD8800CB6939 /* CRImageView.h */,
-				1393A56F1F4FCD8800CB6939 /* CRImageView.m */,
+				1393A56E1F4FCD8800CB6939 /* UGCImageView.h */,
+				1393A56F1F4FCD8800CB6939 /* UGCImageView.m */,
 				1393A5721F4FCD8800CB6939 /* UGCImageCoder.h */,
 				1393A5731F4FCD8800CB6939 /* UGCImageCoder.m */,
 			);
@@ -313,7 +313,7 @@
 				1335C71E1F46B508001F11F4 /* ViewController.m in Sources */,
 				1393A5601F4D268200CB6939 /* CRExifModel.m in Sources */,
 				1393A5631F4D4FDD00CB6939 /* CRExifDict.m in Sources */,
-				1393A5741F4FCD8800CB6939 /* CRImageView.m in Sources */,
+				1393A5741F4FCD8800CB6939 /* UGCImageView.m in Sources */,
 				1335C71B1F46B508001F11F4 /* AppDelegate.m in Sources */,
 				1335C7181F46B508001F11F4 /* main.m in Sources */,
 				1393A53A1F4AC86D00CB6939 /* FCFileManager.m in Sources */,

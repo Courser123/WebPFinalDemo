@@ -1,15 +1,15 @@
 //
-//  CRImageView.m
+//  UGCImageView.m
 //  TestWebP
 //
 //  Created by Courser on 15/08/2017.
 //  Copyright © 2017 Courser. All rights reserved.
 //
 
-#import "CRImageView.h"
+#import "UGCImageView.h"
 #import "UGCImageCoder.h"
 
-@interface CRImageView ()
+@interface UGCImageView ()
 
 @property (nonatomic,assign) NSUInteger webpCurrentFrameIndex;
 @property (nonatomic,assign) NSTimeInterval webpAccumulator;
@@ -22,7 +22,7 @@
 
 @end
 
-@implementation CRImageView
+@implementation UGCImageView
 
 - (instancetype)init {
     if (self = [super init]) {
