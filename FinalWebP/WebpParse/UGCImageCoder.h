@@ -73,7 +73,7 @@ typedef NS_ENUM(NSUInteger, UGCImageBlendOperation) {
 @property (nonatomic) UGCImageDisposeMethod dispose;     ///< Frame dispose method.
 @property (nonatomic) UGCImageBlendOperation blend;      ///< Frame blend operation.
 @property (nullable, nonatomic, strong) UIImage *image; ///< The image.
-+ (instancetype)frameWithImage:(UIImage *)image;
++ (instancetype _Nullable )frameWithImage:(UIImage *_Nullable)image;
 @end
 
 
@@ -88,10 +88,10 @@ typedef NS_ENUM(NSUInteger, UGCImageBlendOperation) {
 @property (nonatomic, readonly) NSUInteger height;         ///< Image canvas height.
 @property (nonatomic, readonly, getter=isFinalized) BOOL finalized;
 
-@property (nonatomic,copy) NSArray *durations;
-@property (nonatomic,strong) UGCImageFrame *bufferFrame;
+@property (nonatomic,copy) NSArray * _Nullable durations;
+@property (nonatomic,strong) UGCImageFrame * _Nullable bufferFrame;
 
-- (void)multiThreadGetFrameAtIndex:(NSUInteger)index completedHandle:(void (^)(UGCImageFrame *))completed;
+- (void)multiThreadGetFrameAtIndex:(NSUInteger)index completedHandle:(void (^_Nullable)(UGCImageFrame *_Nullable))completed;
 
 /**
  Creates an image decoder.
@@ -99,7 +99,7 @@ typedef NS_ENUM(NSUInteger, UGCImageBlendOperation) {
  @param scale  Image's scale.
  @return An image decoder.
  */
-- (instancetype)initWithScale:(CGFloat)scale ;
+- (instancetype _Nullable )initWithScale:(CGFloat)scale ;
 
 /**
  Updates the incremental image with new data.
@@ -126,7 +126,7 @@ typedef NS_ENUM(NSUInteger, UGCImageBlendOperation) {
  @param scale Image's scale.
  @return A new decoder, or nil if an error occurs.
  */
-+ (nullable instancetype)decoderWithData:(NSData *)data scale:(CGFloat)scale;
++ (nullable instancetype)decoderWithData:(NSData *_Nullable)data scale:(CGFloat)scale;
 
 /**
  Decodes and returns a frame from a specified index.
@@ -151,7 +151,7 @@ typedef NS_ENUM(NSUInteger, UGCImageBlendOperation) {
  @return an image decoded, or just return itself if no needed.
  @see isDecodedForDisplay
  */
-- (instancetype)imageByDecoded;
+- (instancetype _Nullable )imageByDecoded;
 
 /**
  Wherher the image can be display on screen without additional decoding.
