@@ -31,6 +31,7 @@
 		1393A5741F4FCD8800CB6939 /* CRImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1393A56F1F4FCD8800CB6939 /* CRImageView.m */; };
 		1393A5751F4FCD8800CB6939 /* UGCImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1393A5711F4FCD8800CB6939 /* UGCImage.m */; };
 		1393A5761F4FCD8800CB6939 /* UGCImageCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1393A5731F4FCD8800CB6939 /* UGCImageCoder.m */; };
+		1393A5781F4FCF5A00CB6939 /* NOEXIFIMG_1600.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1393A5771F4FCF5A00CB6939 /* NOEXIFIMG_1600.webp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		1393A5711F4FCD8800CB6939 /* UGCImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UGCImage.m; sourceTree = "<group>"; };
 		1393A5721F4FCD8800CB6939 /* UGCImageCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UGCImageCoder.h; sourceTree = "<group>"; };
 		1393A5731F4FCD8800CB6939 /* UGCImageCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UGCImageCoder.m; sourceTree = "<group>"; };
+		1393A5771F4FCF5A00CB6939 /* NOEXIFIMG_1600.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = NOEXIFIMG_1600.webp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				1335C71D1F46B508001F11F4 /* ViewController.m */,
 				1393A5561F4C0D1800CB6939 /* webp_test.webp */,
 				1393A56B1F4FCB1A00CB6939 /* IMG_1600.webp */,
+				1393A5771F4FCF5A00CB6939 /* NOEXIFIMG_1600.webp */,
 				1393A53D1F4ACA4700CB6939 /* WechatIMG20.webp */,
 				1393A53B1F4AC93A00CB6939 /* WechatIMG20.jpeg */,
 				1393A54E1F4ADBB800CB6939 /* update_guide_pic_1.gif */,
@@ -289,6 +292,7 @@
 			files = (
 				1335C73C1F46BD97001F11F4 /* pic.webp in Resources */,
 				1335C7261F46B508001F11F4 /* LaunchScreen.storyboard in Resources */,
+				1393A5781F4FCF5A00CB6939 /* NOEXIFIMG_1600.webp in Resources */,
 				1335C7231F46B508001F11F4 /* Assets.xcassets in Resources */,
 				1393A54F1F4ADBB800CB6939 /* update_guide_pic_1.gif in Resources */,
 				1335C7541F46EF9D001F11F4 /* COPYING in Resources */,

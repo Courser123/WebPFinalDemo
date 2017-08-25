@@ -30,13 +30,14 @@
     [self.view addSubview:imageView];
 //    NSString *path = [[NSBundle mainBundle] pathForResource:@"webp_test" ofType:@"webp"];
     NSString *path = [[NSBundle mainBundle] pathForResource:@"IMG_1600" ofType:@"webp"];
-    NSData *data = [NSData dataWithContentsOfFile:path];
+    NSMutableData *data = [NSMutableData dataWithContentsOfFile:path];
     [self.imageView setImageWithData:data];
     
     CRExifParse *exif = [[CRExifParse alloc] init];
     NSDictionary *dict = [exif exifInfoWithWebPData:data];
     NSLog(@"%@",dict);
     NSLog(@"%lu",dict.count);
+    
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
