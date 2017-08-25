@@ -13,7 +13,7 @@
 #import "UGCExifInfoHelper.h"
 #import "UGCExifItemModel.h"
 #import "NSData+ImageContentType.h"
-#import "CRExif.h"
+#import "CRExifParse.h"
 
 @interface ViewController ()
 
@@ -30,12 +30,15 @@
     self.imageView = imageView;
     imageView.frame = self.view.bounds;
     [self.view addSubview:imageView];
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"webp_test" ofType:@"webp"];
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"webp_test" ofType:@"webp"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"IMG_1600" ofType:@"webp"];
     NSData *data = [NSData dataWithContentsOfFile:path];
     [self.imageView setImageWithData:data];
     
-    [CRExif exifInfoWithWebPData:data];
-    
+    CRExifParse *exif = [[CRExifParse alloc] init];
+    NSDictionary *dict = [exif exifInfoWithWebPData:data];
+    NSLog(@"%@",dict);
+    NSLog(@"%lu",dict.count);
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

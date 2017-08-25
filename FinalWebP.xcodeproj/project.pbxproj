@@ -31,7 +31,10 @@
 		1393A5511F4BD0F700CB6939 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1393A5501F4BD0F700CB6939 /* Info.plist */; };
 		1393A5551F4C014500CB6939 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 1393A5541F4C014500CB6939 /* NSData+ImageContentType.m */; };
 		1393A5571F4C0D1800CB6939 /* webp_test.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1393A5561F4C0D1800CB6939 /* webp_test.webp */; };
-		1393A55D1F4C2ABE00CB6939 /* CRExif.m in Sources */ = {isa = PBXBuildFile; fileRef = 1393A55C1F4C2ABE00CB6939 /* CRExif.m */; };
+		1393A55D1F4C2ABE00CB6939 /* CRExifParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1393A55C1F4C2ABE00CB6939 /* CRExifParse.m */; };
+		1393A5601F4D268200CB6939 /* CRExifModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1393A55F1F4D268200CB6939 /* CRExifModel.m */; };
+		1393A5631F4D4FDD00CB6939 /* CRExifDict.m in Sources */ = {isa = PBXBuildFile; fileRef = 1393A5621F4D4FDD00CB6939 /* CRExifDict.m */; };
+		1393A56C1F4FCB1A00CB6939 /* IMG_1600.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1393A56B1F4FCB1A00CB6939 /* IMG_1600.webp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,8 +81,14 @@
 		1393A5531F4C014500CB6939 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
 		1393A5541F4C014500CB6939 /* NSData+ImageContentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+ImageContentType.m"; sourceTree = "<group>"; };
 		1393A5561F4C0D1800CB6939 /* webp_test.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = webp_test.webp; sourceTree = "<group>"; };
-		1393A55B1F4C2ABE00CB6939 /* CRExif.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRExif.h; sourceTree = "<group>"; };
-		1393A55C1F4C2ABE00CB6939 /* CRExif.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRExif.m; sourceTree = "<group>"; };
+		1393A55B1F4C2ABE00CB6939 /* CRExifParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRExifParse.h; sourceTree = "<group>"; };
+		1393A55C1F4C2ABE00CB6939 /* CRExifParse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRExifParse.m; sourceTree = "<group>"; };
+		1393A55E1F4D268200CB6939 /* CRExifModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRExifModel.h; sourceTree = "<group>"; };
+		1393A55F1F4D268200CB6939 /* CRExifModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRExifModel.m; sourceTree = "<group>"; };
+		1393A5611F4D4FDD00CB6939 /* CRExifDict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRExifDict.h; sourceTree = "<group>"; };
+		1393A5621F4D4FDD00CB6939 /* CRExifDict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRExifDict.m; sourceTree = "<group>"; };
+		1393A5641F4D508D00CB6939 /* CRTag.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRTag.h; sourceTree = "<group>"; };
+		1393A56B1F4FCB1A00CB6939 /* IMG_1600.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = IMG_1600.webp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +139,7 @@
 				1335C7301F46B658001F11F4 /* UGCImageCoder.h */,
 				1335C7311F46B658001F11F4 /* UGCImageCoder.m */,
 				1393A5561F4C0D1800CB6939 /* webp_test.webp */,
+				1393A56B1F4FCB1A00CB6939 /* IMG_1600.webp */,
 				1393A53D1F4ACA4700CB6939 /* WechatIMG20.webp */,
 				1393A53B1F4AC93A00CB6939 /* WechatIMG20.jpeg */,
 				1393A54E1F4ADBB800CB6939 /* update_guide_pic_1.gif */,
@@ -227,8 +237,13 @@
 		1393A55A1F4C2A9500CB6939 /* CRExif */ = {
 			isa = PBXGroup;
 			children = (
-				1393A55B1F4C2ABE00CB6939 /* CRExif.h */,
-				1393A55C1F4C2ABE00CB6939 /* CRExif.m */,
+				1393A55B1F4C2ABE00CB6939 /* CRExifParse.h */,
+				1393A55C1F4C2ABE00CB6939 /* CRExifParse.m */,
+				1393A55E1F4D268200CB6939 /* CRExifModel.h */,
+				1393A55F1F4D268200CB6939 /* CRExifModel.m */,
+				1393A5611F4D4FDD00CB6939 /* CRExifDict.h */,
+				1393A5621F4D4FDD00CB6939 /* CRExifDict.m */,
+				1393A5641F4D508D00CB6939 /* CRTag.h */,
 			);
 			path = CRExif;
 			sourceTree = "<group>";
@@ -300,6 +315,7 @@
 				1393A5361F4AB6BF00CB6939 /* dancing_banana2.webp in Resources */,
 				1393A5571F4C0D1800CB6939 /* webp_test.webp in Resources */,
 				1335C7211F46B508001F11F4 /* Main.storyboard in Resources */,
+				1393A56C1F4FCB1A00CB6939 /* IMG_1600.webp in Resources */,
 				1393A53C1F4AC93A00CB6939 /* WechatIMG20.jpeg in Resources */,
 				1393A5511F4BD0F700CB6939 /* Info.plist in Resources */,
 				1393A53E1F4ACA4700CB6939 /* WechatIMG20.webp in Resources */,
@@ -313,12 +329,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1393A55D1F4C2ABE00CB6939 /* CRExif.m in Sources */,
+				1393A55D1F4C2ABE00CB6939 /* CRExifParse.m in Sources */,
 				1393A54C1F4AD90000CB6939 /* UGCExifInfoProperties.m in Sources */,
 				1335C71E1F46B508001F11F4 /* ViewController.m in Sources */,
 				1393A54D1F4AD90000CB6939 /* UGCExifItemModel.m in Sources */,
 				1393A54B1F4AD90000CB6939 /* UGCExifInfoHelper.m in Sources */,
 				1335C73F1F46C734001F11F4 /* CRImageView.m in Sources */,
+				1393A5601F4D268200CB6939 /* CRExifModel.m in Sources */,
+				1393A5631F4D4FDD00CB6939 /* CRExifDict.m in Sources */,
 				1335C72F1F46B539001F11F4 /* UGCImage.m in Sources */,
 				1335C71B1F46B508001F11F4 /* AppDelegate.m in Sources */,
 				1393A54A1F4AD90000CB6939 /* UGCExifInfoDataProcesser.m in Sources */,

@@ -1,5 +1,5 @@
 //
-//  CRExif.h
+//  CRExifParse.h
 //  FinalWebP
 //
 //  Created by Courser on 22/08/2017.
@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CRExif : NSObject
+@interface CRExifParse : NSObject
 
-+ (void)exifInfoWithWebPData:(NSData *)data;
+- (NSDictionary *)exifInfoWithWebPData:(NSData *)data;
 
 @end

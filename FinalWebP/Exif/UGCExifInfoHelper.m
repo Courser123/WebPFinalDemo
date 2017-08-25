@@ -79,7 +79,7 @@ typedef NS_ENUM(NSInteger, TIFFMode) {
     if (flags & EXIF_FLAG) {
         WebPDemuxGetChunk(demux, "EXIF", 1, &chunk_iter);
         NSData *data = [[NSData alloc] initWithBytes:chunk_iter.chunk.bytes length:chunk_iter.chunk.size];
-        NSLog(@"%@",data);
+//        NSLog(@"%@",data);
         NSDictionary *dictionary = [self exifInfoWithData:data];
         return dictionary;
     }
