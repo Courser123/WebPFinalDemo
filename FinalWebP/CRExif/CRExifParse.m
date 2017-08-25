@@ -10,7 +10,6 @@
 #import "demux.h"
 #import "decode.h"
 #import <ImageIO/ImageIO.h>
-#import "UGCExifInfoDataProcesser.h"
 #import "CRExifDict.h"
 
 #define tagItemSize 2

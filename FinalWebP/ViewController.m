@@ -10,8 +10,6 @@
 #import "UGCImageCoder.h"
 #import "CRImageView.h"
 #import "FCFileManager.h"
-#import "UGCExifInfoHelper.h"
-#import "UGCExifItemModel.h"
 #import "NSData+ImageContentType.h"
 #import "CRExifParse.h"
 

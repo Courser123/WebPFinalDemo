@@ -23,10 +23,6 @@
 		1393A53A1F4AC86D00CB6939 /* FCFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1393A5391F4AC86D00CB6939 /* FCFileManager.m */; };
 		1393A53C1F4AC93A00CB6939 /* WechatIMG20.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1393A53B1F4AC93A00CB6939 /* WechatIMG20.jpeg */; };
 		1393A53E1F4ACA4700CB6939 /* WechatIMG20.webp in Resources */ = {isa = PBXBuildFile; fileRef = 1393A53D1F4ACA4700CB6939 /* WechatIMG20.webp */; };
-		1393A54A1F4AD90000CB6939 /* UGCExifInfoDataProcesser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1393A5431F4AD90000CB6939 /* UGCExifInfoDataProcesser.m */; };
-		1393A54B1F4AD90000CB6939 /* UGCExifInfoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1393A5451F4AD90000CB6939 /* UGCExifInfoHelper.m */; };
-		1393A54C1F4AD90000CB6939 /* UGCExifInfoProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1393A5471F4AD90000CB6939 /* UGCExifInfoProperties.m */; };
-		1393A54D1F4AD90000CB6939 /* UGCExifItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1393A5491F4AD90000CB6939 /* UGCExifItemModel.m */; };
 		1393A54F1F4ADBB800CB6939 /* update_guide_pic_1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1393A54E1F4ADBB800CB6939 /* update_guide_pic_1.gif */; };
 		1393A5511F4BD0F700CB6939 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1393A5501F4BD0F700CB6939 /* Info.plist */; };
 		1393A5551F4C014500CB6939 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 1393A5541F4C014500CB6939 /* NSData+ImageContentType.m */; };
@@ -68,14 +64,6 @@
 		1393A5391F4AC86D00CB6939 /* FCFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCFileManager.m; sourceTree = "<group>"; };
 		1393A53B1F4AC93A00CB6939 /* WechatIMG20.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WechatIMG20.jpeg; sourceTree = "<group>"; };
 		1393A53D1F4ACA4700CB6939 /* WechatIMG20.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = WechatIMG20.webp; sourceTree = "<group>"; };
-		1393A5421F4AD90000CB6939 /* UGCExifInfoDataProcesser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UGCExifInfoDataProcesser.h; sourceTree = "<group>"; };
-		1393A5431F4AD90000CB6939 /* UGCExifInfoDataProcesser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UGCExifInfoDataProcesser.m; sourceTree = "<group>"; };
-		1393A5441F4AD90000CB6939 /* UGCExifInfoHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UGCExifInfoHelper.h; sourceTree = "<group>"; };
-		1393A5451F4AD90000CB6939 /* UGCExifInfoHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UGCExifInfoHelper.m; sourceTree = "<group>"; };
-		1393A5461F4AD90000CB6939 /* UGCExifInfoProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UGCExifInfoProperties.h; sourceTree = "<group>"; };
-		1393A5471F4AD90000CB6939 /* UGCExifInfoProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UGCExifInfoProperties.m; sourceTree = "<group>"; };
-		1393A5481F4AD90000CB6939 /* UGCExifItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UGCExifItemModel.h; sourceTree = "<group>"; };
-		1393A5491F4AD90000CB6939 /* UGCExifItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UGCExifItemModel.m; sourceTree = "<group>"; };
 		1393A54E1F4ADBB800CB6939 /* update_guide_pic_1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = update_guide_pic_1.gif; sourceTree = "<group>"; };
 		1393A5501F4BD0F700CB6939 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1393A5531F4C014500CB6939 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
@@ -125,7 +113,6 @@
 			children = (
 				1393A55A1F4C2A9500CB6939 /* CRExif */,
 				1393A5521F4C012200CB6939 /* Category */,
-				1393A5411F4AD8E500CB6939 /* Exif */,
 				1393A5371F4AC86D00CB6939 /* FCFileManager */,
 				1335C7481F46EF9D001F11F4 /* libwebp */,
 				1335C7191F46B508001F11F4 /* AppDelegate.h */,
@@ -208,21 +195,6 @@
 				1393A5391F4AC86D00CB6939 /* FCFileManager.m */,
 			);
 			path = FCFileManager;
-			sourceTree = "<group>";
-		};
-		1393A5411F4AD8E500CB6939 /* Exif */ = {
-			isa = PBXGroup;
-			children = (
-				1393A5421F4AD90000CB6939 /* UGCExifInfoDataProcesser.h */,
-				1393A5431F4AD90000CB6939 /* UGCExifInfoDataProcesser.m */,
-				1393A5441F4AD90000CB6939 /* UGCExifInfoHelper.h */,
-				1393A5451F4AD90000CB6939 /* UGCExifInfoHelper.m */,
-				1393A5461F4AD90000CB6939 /* UGCExifInfoProperties.h */,
-				1393A5471F4AD90000CB6939 /* UGCExifInfoProperties.m */,
-				1393A5481F4AD90000CB6939 /* UGCExifItemModel.h */,
-				1393A5491F4AD90000CB6939 /* UGCExifItemModel.m */,
-			);
-			path = Exif;
 			sourceTree = "<group>";
 		};
 		1393A5521F4C012200CB6939 /* Category */ = {
@@ -330,16 +302,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1393A55D1F4C2ABE00CB6939 /* CRExifParse.m in Sources */,
-				1393A54C1F4AD90000CB6939 /* UGCExifInfoProperties.m in Sources */,
 				1335C71E1F46B508001F11F4 /* ViewController.m in Sources */,
-				1393A54D1F4AD90000CB6939 /* UGCExifItemModel.m in Sources */,
-				1393A54B1F4AD90000CB6939 /* UGCExifInfoHelper.m in Sources */,
 				1335C73F1F46C734001F11F4 /* CRImageView.m in Sources */,
 				1393A5601F4D268200CB6939 /* CRExifModel.m in Sources */,
 				1393A5631F4D4FDD00CB6939 /* CRExifDict.m in Sources */,
 				1335C72F1F46B539001F11F4 /* UGCImage.m in Sources */,
 				1335C71B1F46B508001F11F4 /* AppDelegate.m in Sources */,
-				1393A54A1F4AD90000CB6939 /* UGCExifInfoDataProcesser.m in Sources */,
 				1335C7181F46B508001F11F4 /* main.m in Sources */,
 				1393A53A1F4AC86D00CB6939 /* FCFileManager.m in Sources */,
 				1393A5551F4C014500CB6939 /* NSData+ImageContentType.m in Sources */,
