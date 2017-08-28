@@ -76,7 +76,6 @@ typedef NS_ENUM(NSUInteger,CRIFDMode) {
     return _resultDict;
 }
 
-
 - (void)handleExifData:(NSData *)data {
     
     Byte *byte = (Byte *)data.bytes;
