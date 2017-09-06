@@ -552,7 +552,7 @@ CGImageRef UGCCGImageCreateDecodedCopy(CGImageRef imageRef, BOOL decodeForDispla
         int height = extendToCanvas ? (int)_height : frameHeight;
         if (width > _width || height > _height) return NULL;
         
-        const uint8_t *payload = iter.fragment.bytes; // fragment为当前帧的data(不太确定)
+        const uint8_t *payload = iter.fragment.bytes; // fragment为当前帧的data
         size_t payloadSize = iter.fragment.size;
         
         WebPDecoderConfig config; // 解码配置

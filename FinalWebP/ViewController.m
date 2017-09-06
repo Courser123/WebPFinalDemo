@@ -29,7 +29,8 @@
     imageView.frame = self.view.bounds;
     [self.view addSubview:imageView];
 //    NSString *path = [[NSBundle mainBundle] pathForResource:@"IMG_1600" ofType:@"webp"];
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"pic" ofType:@"webp"];
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"pic" ofType:@"webp"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"animated_webp-3" ofType:@"webp"];
     NSMutableData *data = [NSMutableData dataWithContentsOfFile:path];
     [self.imageView setImageWithData:data];
     
