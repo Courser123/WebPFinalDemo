@@ -77,7 +77,7 @@ typedef NS_ENUM(NSUInteger,CRIFDMode) {
 }
 
 - (void)handleExifData:(NSData *)data {
-    
+    kCGImagePropertyExifOECF
     Byte *byte = (Byte *)data.bytes;
     self.mode = [self getExifDataMode:byte];
     
